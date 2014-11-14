@@ -1,56 +1,79 @@
-<h1>Create New Hostel</h1>
-<p>Need to create a form</p>
 
-<%= form_for @hostel, :url=> {:action => "create" }, :html => { :method => :post } do |f| %>
+<div class="row">
+	<div class="col-md-2 side-bar ">
+		<ul class="nav nav-side">
+			<li><i class="fa fa-home"></i> Dashboard</li>
+			<li><i class="fa fa-plus"></i> Create Hostel</li>
+			<li><i class="fa fa-list"></i> List Hostel</li>
+		</ul>
+	</div>
 
-<% if @hostel.errors.any? %>
-<div id="error_explanation">
-	<h2><%= pluralize(@hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
+	<div class="side-content col-lg-10">
 
-	<ul>
-		<% @hostel.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
+		<div class="col-md-12">
 
-<div class="field">
-	<%= f.label :name %><br>
-	<%= f.text_field :name %>
-</div>
-<div class="field">
-	<%= f.label :location %><br>
-	<%= f.text_field :location %>
-</div>
-<div class="field">
-	<%= f.label :facilities %><br>
-	<%= f.text_field :facilities %>
-</div>
-<div class="field">
-	<%= f.label :rules %><br>
-	<%= f.text_area :rules %>
-</div>
-<div class="field">
-	<%= f.label :email %><br>
-	<%= f.email_field :email %>
-</div>
-<div class="field">
-	<%= f.label :contact %><br>
-	<%= f.text_field :contact %>
-</div>
-<div class="field">
-	<%= f.label :type %><br>
-	<%= f.text_field :type %>
-</div>
-<div class="field">
-	<%= f.label :picture %><br>
-	<%= f.file_field :images %>
-</div>
+			<div class="panel panel-default">
+				<div class="panel-heading dark-grey">Register Hostel </div>
 
-<div class="actions">
-	<%= f.submit %>
-</div>
+				<div class="panel-body">
+					<%= form_for @hostel, :url=> {:action => "create" }, :html => { :method => :post, :multipart => true} ,  :class => 'panel-heading dark-grey' do |f| %>
 
-<% end %>
+					<% if @hostel.errors.any? %>
+					<div id="error_explanation">
+						<h2><%= pluralize(@hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
+
+						<ul>
+							<% @hostel.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+							<% end %>
+						</ul>
+					</div>
+					<% end %>
+
+					<div class="form-group col-lg-12">
+						<%= f.label :name %><br>
+						<%= f.text_field :name , :class => 'form-control'%>
+					</div>
+
+					<div class="form-group col-lg-6">
+						<%= f.label :location %><br>
+						<%= f.text_field :location , :class => 'form-control'%>
+					</div>
+					<div class="form-group col-lg-6">
+						<%= f.label :facilities %><br>
+						<%= f.text_field :facilities , :class => 'form-control' %>
+					</div>
+					
+					<div class="form-group col-lg-6">
+						<%= f.label :email %><br>
+						<%= f.email_field :email , :class => 'form-control'%>
+					</div>
+					<div class="form-group col-lg-6">
+						<%= f.label :contact %><br>
+						<%= f.text_field :contact , :class => 'form-control'%>
+					</div>
+					<div class="form-group col-lg-6">
+						<%= f.label :Hostel_type %><br>
+						<%= f.text_field :hostel_type , :class => 'form-control'%>
+					</div>
+					<div class="form-group col-lg-6">
+						<%= f.label :picture %><br>
+						<%= f.file_field :picture , :class => 'form-control'%>
+					</div>
+
+					<div class="form-group col-lg-12">
+						<%= f.label :rules %><br>
+						<%= f.text_area :rules , :class => 'form-control'%>
+					</div>
+
+					<div class="actions form-group col-lg-6">
+						<%= f.submit :class => 'btn btn-lg btn-primary'%>
+					</div>
+
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 

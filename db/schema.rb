@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112105741) do
+ActiveRecord::Schema.define(version: 20141114120323) do
 
   create_table "hostels", force: true do |t|
     t.string   "name"
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 20141112105741) do
     t.string   "facilities"
     t.text     "rules"
     t.integer  "contact"
-    t.string   "type"
-    t.string   "images"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+    t.string   "picture"
+    t.string   "hostel_type"
   end
 
 end

@@ -12,7 +12,7 @@ class HostelController < ApplicationController
 	def create
 		@hostel = Hostel.new(hostel_params)
 		if @hostel.save
-			render text "SAVED DATA"
+			render text: "SAVED DATA"
 		else
 			render "new"
 		end
@@ -21,6 +21,6 @@ class HostelController < ApplicationController
 
 	private
 	def hostel_params
-		params.require(:hostel).permit(:name,:location)		
+		params.require(:hostel).permit(:name,:location,:facilities,:rules, :email, :contact, :hostel_type, :picture)		
 	end
 end
