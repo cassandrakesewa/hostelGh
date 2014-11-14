@@ -1,0 +1,56 @@
+<h1>Create New Hostel</h1>
+<p>Need to create a form</p>
+
+<%= form_for @hostel, :url=> {:action => "create" }, :html => { :method => :post } do |f| %>
+
+<% if @hostel.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
+
+	<ul>
+		<% @hostel.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="field">
+	<%= f.label :name %><br>
+	<%= f.text_field :name %>
+</div>
+<div class="field">
+	<%= f.label :location %><br>
+	<%= f.text_field :location %>
+</div>
+<div class="field">
+	<%= f.label :facilities %><br>
+	<%= f.text_field :facilities %>
+</div>
+<div class="field">
+	<%= f.label :rules %><br>
+	<%= f.text_area :rules %>
+</div>
+<div class="field">
+	<%= f.label :email %><br>
+	<%= f.email_field :email %>
+</div>
+<div class="field">
+	<%= f.label :contact %><br>
+	<%= f.text_field :contact %>
+</div>
+<div class="field">
+	<%= f.label :type %><br>
+	<%= f.text_field :type %>
+</div>
+<div class="field">
+	<%= f.label :picture %><br>
+	<%= f.file_field :images %>
+</div>
+
+<div class="actions">
+	<%= f.submit %>
+</div>
+
+<% end %>
+
