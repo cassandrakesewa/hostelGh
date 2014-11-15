@@ -42,3 +42,30 @@
 	border-radius: 0;
 }
 
+
+.status{
+	text-align: center;
+}
+
+
+
+.modal-body{
+	min-height: 500px;
+}
+
+.location{
+	border-right: 1px solid #ddd;
+}
+
+.image{
+	margin-bottom: -20px;
+}
+
+.rules{
+	height: 120px;
+	border: 1px solid #ddd;
+}
+
+.facilities{
+	border-right: 1px solid #ddd;
+}
